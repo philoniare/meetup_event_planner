@@ -1,38 +1,18 @@
-import { Component } from '@angular/core';
-
-import { AppState } from '../app.service';
-import { Title } from './title';
-import { XLarge } from './x-large';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'home',  // <home></home>
-  providers: [
-    Title
-  ],
-  directives: [
-    XLarge
-  ],
-  pipes: [ ],
-  styleUrls: [ './home.style.css' ],
-  templateUrl: './home.template.html'
+  selector: 'my-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class Home {
-  // Set our default values
-  localState = { value: '' };
-  // TypeScript public modifiers
-  constructor(public appState: AppState, public title: Title) {
+export class HomeComponent implements OnInit {
 
+  constructor() {
+    // Do stuff
   }
 
   ngOnInit() {
-    console.log('hello `Home` component');
-    // this.title.getData().subscribe(data => this.data = data);
-  }
-
-  submitState(value) {
-    console.log('submitState', value);
-    this.appState.set('value', value);
-    this.localState.value = '';
+    console.log('Hello Home');
   }
 
 }

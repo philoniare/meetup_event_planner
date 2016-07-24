@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Event Planner</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <!-- MaterializeCSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+ 	
+    <base href="/">
+  </head>
+  <body>
+    <my-app>Loading...</my-app>
+    <!-- jQuery -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>  
+    <script>
+      // Init the sidebar
+      (function($){
+        $(function(){
+
+          $('.button-collapse').sideNav();
+
+        }); // end of document ready
+      })(jQuery); 
+    </script>
+  </body>
+</html>

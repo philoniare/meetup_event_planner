@@ -1,51 +1,24 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { AppState } from './app.service';
+import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
+import { ApiService } from './shared';
+
+import '../style/app.scss';
+
+/*
+ * App Component
+ * Top Level Component
+ */
 @Component({
-  selector: 'app',
-  encapsulation: ViewEncapsulation.None,
-  styleUrls: [
-    './app.style.css'
-  ],
-  template: `
-    <md-content>
-      <md-toolbar color="primary">
-          <span>{{ name }}</span>
-          <span class="fill"></span>
-          <a md-button router-active [routerLink]=" ['./'] ">
-            Index
-          </a>
-          <a md-button router-active [routerLink]=" ['./home'] ">
-            Home
-          </a>
-          <a md-button router-active [routerLink]=" ['./about'] ">
-            About
-          </a>
-      </md-toolbar>
-
-      <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
-
-      <router-outlet></router-outlet>
-
-      <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
-
-      <footer>
-        <img [src]="angularclassLogo" width="6%">
-        <span id="footerText">WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
-      </footer>
-      </md-content>
-  `
+  selector: 'my-app', // <my-app></my-app>
+  providers: [ApiService],
+  directives: [...ROUTER_DIRECTIVES],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
-export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
-  loading = false;
-  name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
-  constructor(
-    public appState: AppState) {
+export class AppComponent {
+  url = 'https://github.com/preboot/angular2-webpack';
 
-  }
-  ngOnInit() {
-    console.log('Initial App State', this.appState.state);
+  constructor(private api: ApiService) {
   }
 }

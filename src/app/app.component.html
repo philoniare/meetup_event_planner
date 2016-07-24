@@ -1,0 +1,33 @@
+<header>
+	<nav class="light-blue lighten-1" role="navigation">
+	    <div class="nav-wrapper container">
+	    	<a id="logo-container" href="#" class="brand-logo">Event Planner</a>
+			<ul class="right hide-on-med-and-down">
+				<!-- Links on the sidebar -->
+				<li><a [routerLink]="['']">Home</a></li>
+				<li><a [routerLink]="['about']">About</a></li>
+			</ul>
+
+	      <ul id="nav-mobile" class="side-nav">
+	        <li><a [routerLink]="['']">Home</a></li>
+	        <li><a [routerLink]="['about']">About</a></li>
+	      </ul>
+	      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+	    </div>
+  	</nav>
+</header>
+<main>
+  <!-- <h1 class="title">Hello from {{api.title}}!</h1> -->
+
+  <!-- Images (and assets) are parsed and loaded from within the public directory -->
+  <!-- <img src="/img/angular.png"> -->
+
+  <router-outlet></router-outlet>
+</main>
+<footer class="page-footer orange">
+	<div class="footer-copyright">
+		<div class="container">
+			Made by <a class="orange-text text-lighten-3" href="http://philoniare.me">philoniare</a>
+		</div>
+	</div>
+</footer>
